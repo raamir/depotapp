@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-info">
+
+<div class="panel-heading"><h2>line_item</h2></div>
+
+<div class="panel-body">
+
+
+
+<p>
+  <strong>Product:</strong>
+  <%= @line_item.product.title %>
+</p>
+
+
+<p>
+  <strong>Cart:</strong>
+  <%= @line_item.cart_id %>
+</p>
+</div>
+
+<div class="panel-footer">
+
+<%= link_to 'Edit', edit_line_item_path(@line_item) ,class:"btn btn-xs btn-primary" %> |
+<%= link_to 'Back', line_items_path , class:"btn btn-xs btn-danger" %>
+
+</div></div>
