@@ -80,4 +80,5 @@ class LineItemsController < ApplicationController
       params.require(:line_item).permit(:product_id)
     end
   #...
+  
 end
