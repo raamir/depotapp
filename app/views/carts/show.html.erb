@@ -4,30 +4,28 @@
 <div class="panel-heading"><h2>Your Pragmatic Cart</h2></div>
 
 <div class="panel-body">
-  
-<table class = "table table-responsive">
-  <% @cart.line_items.each do |item| %>
+ <table class="table table-responsive">
+    
+    <% @cart.line_items.each do |item| %>
     <tr>
-      <td><%= item.quantity %>&times;</td>
-      <td><%= item.product.title %></td>
-      <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+    <td><%= item.quantity %> &times; </td><td><%= item.product.title %></td><td><%= number_to_currency(item.total_price) %></td>
     </tr>
-  <% end %>
-
-  <tr class="total_line">
-    <td colspan="2"><b>Total</b></td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-  </tr>
-
-</table>
-
-
+    <% end %>
+    <tr>
+    <td colspan="2">Total Order Value </td><td><%= number_to_currency(@cart.total_price) %></td>
+    </tr>
+ </table>
 </div>
 
 <div class="panel-footer">
-  <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success btn-sm" %>
-<%= link_to 'Edit', edit_cart_path(@cart) ,class:"btn btn-xs btn-primary" %> |
-<%= link_to 'Back', carts_path , class:"btn btn-xs btn-danger" %>
-<%= link_to 'Keep Shopping', store_index_url , class:"btn btn-info btn-sm" %>
-</div></div>
+<%= button_to "Checkout", new_order_path, method: :get , class:"btn btn-default" %>
+______
 
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-success" %>
+
+<%= link_to 'Edit', edit_cart_path(@cart) ,class:"btn btn-xs btn-danger" %> |
+<%= link_to 'Back', carts_path , class:"btn btn-xs btn-danger" %>
+<%= link_to 'Keep Shopping', store_index_url , class:"btn btn-primary" %>
+
+
+</div></div>
