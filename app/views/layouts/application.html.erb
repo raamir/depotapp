@@ -14,15 +14,20 @@
     <div class="navbar-header">
     <a class="navbar-brand" href="/"><%= image_tag 'rails.png', alt: 'The Major Depot' %></a>
     </div>
-    <h1> </h1>
+        <h1> </h1>
     <ul class="nav navbar-nav">
-      <li><a href="/",class= "link">Store</a></li>
-      <li><a href="/products", class= "link">Products</a></li>
-      <li><a href="/carts", class= "link">Cart</a></li>
-      <li><a href="/line_items", class= "link">Line Items</a></li>
-      <li><a href="/orders", class= "link">Orders</a></li>
-    </ul>
-  
+      <li><a href="/static_pages/home", class= "link">Home</a></li>
+      <li><a href="/store/index", class= "link">Store</a></li>
+      <li><a href="/static_pages/contact", class= "link">Contact Us</a></li>
+      <li><%= button_to 'Login', login_path, method: :create , class:"btn btn-primary" %></li>
+      <% if session[:user_id] %>
+      <li><%= link_to 'Orders', orders_path %></li>
+      <li><%= link_to 'Carts', carts_path %></li>
+      <li><%= link_to 'Products', products_path %></li>
+      <li><%= link_to 'Users', users_path %></li>
+      <li><%= button_to 'Logout', logout_path, method: :delete , class:"btn btn-default" %></li>
+     <% end %>
+      </ul>
     </nav>
     <div>
     <%= yield %>
