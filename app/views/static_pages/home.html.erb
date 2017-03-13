@@ -1,2 +1,37 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<p> </p>
+<h1 class= "text-info">Welcome to Shop Indeed</h1>
+<p>You are one stop away from getting the best products you want for your home, school, or office, or your web development bookshelf. 
+<br/><br/>Hurry up and grab the your favorite item before someone else takes it. But first, hit the login button at the top to start shopping.</p>
+<h3><b>Take a brief look at our products!!</b></h3>
+<p> </p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="thumbnail">
+       <a href="/store/index"> <%= image_tag("book2.jpg", :alt => "toy") %>
+        <div class="caption">
+          <p><em> No. 1 New York Times bestselling </em>
+        By the author Lisa See  </p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+        <a href="/store/index"> <%= image_tag("frames.jpg", :alt => "toy") %>
+        <div class="caption">
+          <p><em>Capture your memories</em>
+          Because your memories are precious and you need something to get nostalgic.
+          So, we have these frames, which are perfect for house.</p></div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+         <a href="/store/index"><%= image_tag("bulk2.jpg", :alt => "toy") %>
+        <div class="caption">
+          <p>School Supplies!! All that you need.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

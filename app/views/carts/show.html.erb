@@ -1,4 +1,4 @@
-<div class= "alert alert-success", id="notice"><%= notice %></div>
+<p> </p>
 <div class="panel panel-info">
 
 <div class="panel-heading"><h2>Your Pragmatic Cart</h2></div>
@@ -12,20 +12,20 @@
     </tr>
     <% end %>
     <tr>
-    <td colspan="2">Total Order Value </td><td><%= number_to_currency(@cart.total_price) %></td>
+    <td colspan="2"><b>Total Order Value: </b></td><td><b><%= number_to_currency(@cart.total_price) %></b></td>
     </tr>
  </table>
 </div>
 
 <div class="panel-footer">
 <%= button_to "Checkout", new_order_path, method: :get , class:"btn btn-default" %>
-______
-
+<hr/>
 <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-success" %>
 
-<%= link_to 'Edit', edit_cart_path(@cart) ,class:"btn btn-xs btn-danger" %> |
-<%= link_to 'Back', carts_path , class:"btn btn-xs btn-danger" %>
-<%= link_to 'Keep Shopping', store_index_url , class:"btn btn-primary" %>
+<hr/>
+<%= link_to 'Edit', edit_cart_path(@cart) ,class:"btn btn-info" %> |
+<%= link_to 'Back', carts_path , class:"btn btn-danger" %>
+<%= link_to 'Keep Shopping', store_index_url , class:"btn btn-default" %>
 
 
 </div></div>
